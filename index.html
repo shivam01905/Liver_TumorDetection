@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Liver Segmentation App</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		img {
+			display: block;
+			margin: auto;
+			max-width: 100%;
+			height: auto;
+		}
+	</style>
+</head>
+<body>
+	<h1>Liver Segmentation App</h1>
+	<form method="POST" action="/" enctype="multipart/form-data">
+		<input type="file" name="file" accept=".png,.jpg,.jpeg" required>
+		<button type="submit">Segment</button>
+	</form>
+	<br>
+	{% if label %}
+		<h2>Segmentation Result</h2>
+		<img src="data:image/jpeg;base64,{{ label }}" alt="segmentation result">
+	{% endif %}
+</body>
+</html>
